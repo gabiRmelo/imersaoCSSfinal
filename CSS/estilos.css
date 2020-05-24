@@ -1,0 +1,335 @@
+/*definindo padrões gerais através do seletor genérico*/
+/*soft reset do CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*configurando corpo da página: plano de fundo e fonte*/
+body {
+  background-image: url('../img/fundo-creditos-images-alphacoders.jpg');
+  font-family: 'Caladea', serif;
+  color: yellow;
+  /*background-size: auto 100vh;*/
+  height: 100vh;
+  font-size: 20px;
+  }
+
+  /*configurando visualização adaptada ao tipo de tela*/
+  /*se a tela tiver pelo menos 400px vai carregar estes estilos*/
+  @media (min-width: 400px) {
+    body{
+      font-size: 16px;
+    }
+ }
+  
+ /*breakpoint*/
+  @media (min-width: 600px) {
+    body{
+      font-size: 18px;
+    }
+  }
+
+  /*breakpoint*/
+  @media (min-width: 1200px) {
+    body{
+    font-size: 20px;
+    }  
+  }
+}  
+
+/*configurando o cabeçalho da página*/  
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*definindo cor de fundo do menu e fixando-o no topo da página*/
+.menu {
+  background-color: darkslateblue;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+/*fazendo as linhas virarem colunas e alinhando o texto*/
+.menu ul {
+  display: flex;       
+  justify-content: space-around;      
+}
+  
+/*removendo marcadores da lista*/
+.menu li {
+  list-style: none;  
+}
+  
+/*ampliando a área de clique das sessões*/
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.5s, color 0.8s;
+}
+
+.menu a:active,
+.menu a:hover {
+  text-decoration: none;
+  background-color: white;
+  color: darkslateblue;
+}
+
+/*removendo o sublinhado dos hiperlinks*/
+a {
+  color: white;
+  text-decoration: none;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/*adicionando underline ao passar o mouse sobre o texto*/
+a:active,
+a:hover {
+  text-decoration: underline; 
+}
+
+.titulo {
+  transform: scale(0.4) translateY(50vh);
+  transition: 2s text-shadow;
+  opacity: 0;
+  animation: linear 4s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+  
+  20% {
+    text-shadow: 4px 4px 6px yellow;
+  }
+  
+  40% {
+    text-shadow: 4px 4px 6px darkslateblue;
+  }
+
+  60% {
+    text-shadow: 4px 4px 6px cyan;
+  }
+  
+  80% {
+    text-shadow: 4px 4px 6px lime;
+  }
+
+  100% {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  backdrop-filter: blur(2px);
+  text-shadow: 4px 4px 6px deeppink;
+  }
+}
+
+
+/*configurando e alinhando título e subtítulo da página*/
+/*aplicando filtro para desfocar o plano de fundo do texto*/
+.site-subtitle,
+.site-title {
+  text-align: center;
+  color: whitesmoke;
+  backdrop-filter: blur(2px);
+  min-height: 30vh;
+}
+
+/*estilizando o título*/
+.site-title {
+  font-size: 3.5em;
+  font-family: 'Bungee Inline', cursive;
+  line-height: 1.7em;
+  margin-top: 3em;
+}
+
+/*estilizando o subtítulo*/
+.site-subtitle {
+  font-style: oblique;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8em;
+}
+
+/*estilizando a sessão portfolio*/
+.sobre,
+.contato,
+.portfolio {
+  padding: 2em;
+  min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+  padding-left: 1em;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.6em;
+  margin-bottom: 1.5em;
+  margin-top: 0.8em;
+  line-height: 1.7em;
+  background-color: darkslateblue;
+  border-radius: 50px;
+}
+
+.sobre p {
+  color: yellow;
+  backdrop-filter: blur(2px);
+  text-indent: 1.5em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.sobre a {
+  text-decoration: underline;
+}
+
+.sobre a:active,
+.sobre a:hover {
+  background-color: darkslateblue;
+  text-decoration: none;
+}
+
+/*se tivesse uma imagem nesta sessão
+.sobre .avatar {
+  float: right;
+  margin-left: 2em;
+  clip-path: polygon(ver no site https://bennettfeely.com/clippy/ o códico do formato desejado);
+}*/
+
+.portfolio figcaption {
+  font-family: 'Press Start 2P', cursive;
+  backdrop-filter: blur(2px);
+  color: yellow;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 1em;
+}
+
+  @media (min-width: 300px) {
+    .portfolio .grid {
+    grid-template-columns: repeat(1, 200px);
+    justify-content: center;
+    align-content: center;
+    }
+  }
+
+  @media (min-width: 560px) {
+    .portfolio .grid {
+    grid-template-columns: repeat(2, 270px);
+    justify-content: center;
+    align-content: center;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .portfolio .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 3em;
+    justify-content: center;
+    align-content: center;
+    }
+  }
+}
+.portfolio figure {
+  text-align: center;
+}
+
+/*estilizando as imagens da sessão portfólio*/
+.img-portfolio {
+  height: 175px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 300px;
+  object-position: center;
+  transition: transform 5ms;
+}
+
+.img-portfolio:active,
+.img-portfolio:hover {
+  transform: scale(1.5) rotate(-9deg);
+}
+
+.flip-card {
+  height: 175px; 
+  perspective: 1000px;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+  text-decoration: underline;
+  color: whitesmoke;
+  text-shadow: 4px 4px 6px deeppink;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left:0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 122, 225);
+  height: 175px;
+  width: 100%;
+  border-radius: 300px;
+  transform: rotateY(180deg);
+  text-align: center;
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.card-back a:active,
+.card-back a:hover {
+  background-color: darkslateblue;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: deeppink;
+  font-size: 5em;
+  word-spacing: 2em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  color: whitesmoke;
+  text-shadow: 4px 4px 6px deeppink;
+}
+  }
+  
