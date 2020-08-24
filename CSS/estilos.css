@@ -253,12 +253,15 @@ a:hover {
 
 /*estilizando as imagens da sessão portfólio*/
 .img-portfolio {
-  height: 175px;
+  height: 200px;
   width: 100%;
   object-fit: contain;
-  border-radius: 300px;
+  border-radius: 50%;
   object-position: center;
   transition: transform 5ms;
+  padding: 10px;
+  margin: auto;
+  background: slateblue;
 }
 
 .img-portfolio:active,
@@ -305,6 +308,7 @@ a:hover {
   text-align: center;
   font-size: 1em;
   text-decoration: underline;
+  padding: 2px;
 }
 
 .card-back a:active,
