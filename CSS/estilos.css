@@ -223,7 +223,7 @@ a:hover {
 
   @media (min-width: 300px) {
     .portfolio .grid {
-    grid-template-columns: repeat(1, 200px);
+    grid-template-columns: repeat(1, 70%);
     justify-content: center;
     align-content: center;
     }
@@ -270,7 +270,7 @@ a:hover {
 }
 
 .flip-card {
-  height: 175px; 
+  height: 220px; 
   perspective: 1000px;
 }
 
